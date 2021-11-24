@@ -4,4 +4,15 @@
 const fs = require("fs");
 
 // creates file, with name and content
-fs.writeFileSync("hello.txt ", "Hello from node.js");
+fs.writeFileSync("hello.txt", "Hello node.js");
+
+
+// delete file
+const path = "./hello.txt";
+
+try {
+  fs.unlinkSync(path);
+  console.log("File removed:", path);
+} catch (err) {
+  console.error(err);
+}
